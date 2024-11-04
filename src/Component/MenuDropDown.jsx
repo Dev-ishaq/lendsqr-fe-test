@@ -55,7 +55,7 @@ const MenuDropDown = () => {
          style={{
            position: 'absolute',
            top: '100%',
-           left: '11em',
+           left: '9rem',
            backgroundColor: '#fff',
            border: '1px solid #ddd',
            boxShadow: '0px 8px 16px rgba(0,0,0,0.2)',
@@ -68,15 +68,18 @@ const MenuDropDown = () => {
            zIndex: 1,
          }}
        >
-         <ul style={{ padding: '10px', margin: 0 }}>
-           <Link style={{ padding: '8px 12px', cursor: 'pointer', color: 'darkblue', fontSize: '13px' }} onClick={toggleDropdown}>
-             <i className="fa-regular fa-eye"></i> View Details
+         <ul style={{ padding: '10px', margin: 0, height: '15vh', width: '100%' }}>
+           <Link style={{ padding: '10px', cursor: 'pointer', color: 'rgb(12, 72, 122)', fontSize: '14px' }} onClick={toggleDropdown}>
+              Bank Details
            </Link><br />
-           <Link style={{ padding: '8px 12px', cursor: 'pointer', color: 'darkblue', fontSize: '13px' }} onClick={toggleDropdown}>
-             <i className="fa-solid fa-user-xmark"></i> Blacklist User
+           <Link style={{ padding: '10px', cursor: 'pointer', color: 'rgb(12, 72, 122)', fontSize: '14px' }} onClick={toggleDropdown}>
+             Loan
            </Link><br />
-           <Link style={{ padding: '8px 12px', cursor: 'pointer', color: 'darkblue', fontSize: '13px' }} onClick={toggleDropdown}>
-             <i className="fa-solid fa-user-check"></i> Activate User
+           <Link style={{ padding: '10px', cursor: 'pointer', color: 'rgb(12, 72, 122)', fontSize: '14px' }} onClick={toggleDropdown}>
+             Savings
+           </Link><br />
+           <Link style={{ padding: '10px', cursor: 'pointer', color: 'rgb(12, 72, 122)', fontSize: '14px' }} onClick={toggleDropdown}>
+             App and System
            </Link>
          </ul>
        </div>
