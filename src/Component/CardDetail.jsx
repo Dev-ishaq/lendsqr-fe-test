@@ -1,6 +1,5 @@
 import React from 'react'
-// import './Cards'
-import './CardDetail.css';
+import '../assets/css/CardDetail.css';
 import { Link } from 'react-router-dom';
 import Br from './Br';
 import MenuDropDown from './MenuDropDown';

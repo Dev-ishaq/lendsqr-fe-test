@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Cards from './Cards';
-import './Nav.css';
+import '../assets/css/Nav.css';
 import UserTable from './UserTables';
 import { Link } from 'react-router-dom';
 

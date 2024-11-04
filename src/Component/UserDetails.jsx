@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from './Head';
 import User from './User';
-import './Nav.css';
+import '../assets/css/Nav.css';
 
 const UserDetails = () => {
   return (

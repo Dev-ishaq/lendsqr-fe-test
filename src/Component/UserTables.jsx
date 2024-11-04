@@ -1,16 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import './UserTables.css';
-import './Ut.css';
+import '../assets/css/UserTables.css';
+import '../assets/css/Ut.css';
 import DropDown from './DropDown';
-// import './DropDown.css'
 
 const UserTable = () => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage] = useState(10);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [dropdownVisible, setDropdownVisible] = useState(null);
   const tableRef = useRef(null);
 
   useEffect(() => {
@@ -40,10 +38,6 @@ const UserTable = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
-  // const toggleDropdown = (userId) => {
-  //   setDropdownVisible((prevId) => (prevId === userId ? null : userId));
-  // };
 
   return (
     <div className="table-container">
@@ -114,20 +108,6 @@ const UserTable = () => {
               <td style={{ display: 'flex', justifyContent: 'space-between', position: 'relative' }}>
                 <span className={`status ${user.status.toLowerCase()}`}>{user.status}</span>
                <DropDown />
-                {/* <div>
-                  <i
-                    className="fa-solid fa-ellipsis-vertical text-dark"
-                    onClick={() => toggleDropdown(user.id)}
-                    style={{ cursor: 'pointer' }}
-                  ></i>
-                  {dropdownVisible === user.id && (
-                    <div className="dropdown-menu">
-                      <Link to={`/users/${user.id}/edit`}>Edit</Link>
-                      <Link to={`/users/${user.id}/details`}>View Details</Link>
-                      <Link to={`/users/${user.id}/delete`}>Delete</Link>
-                    </div>
-                  )}
-                </div> */}
               </td>
             </tr>
           ))}
