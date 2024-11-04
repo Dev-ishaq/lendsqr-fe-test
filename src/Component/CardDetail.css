@@ -1,0 +1,454 @@
+*{
+    font-family: sans-serif;
+}
+.main-cards-datails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.main-cards .back-link {
+    width: 90%;
+    color: rgb(12, 72, 122);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-cards .back-link .back {
+    color: rgb(12, 72, 122);
+    font-size: 12px;
+}
+.main-cards .back-link .backlist {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+}
+.main-cards .back-link .backlist .b-u {
+    color: red;
+    padding: 5px 15px;
+    border-radius: 7px;
+    border: 1px solid red;
+}
+
+.main-cards .back-link .backlist .a-u {
+    color: rgb(67, 241, 163);
+    padding: 5px 15px;
+    border-radius: 7px;
+    border: 1px solid rgb(67, 241, 163);
+}
+
+.cards-wrapper-datails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 9vh;
+    width: 100%;
+}
+.all-cards-datails {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+.carddd {
+    width: 100%;
+    height: 18vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.br-spacing {
+    display: none;
+}
+.user-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px 5px 10px;
+}
+.user-profile .logo-name {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 5px 30px;
+    border-right: 1px solid silver;
+}
+.user-profile .logo-name .user-icon {
+    background-color: rgb(12, 72, 122);
+    color: #fff;
+    font-size: 50px;
+    height: 10vh;
+    padding: 8px 25px;
+    border-radius: 50%;
+}
+.user-profile .logo-name .username {
+    font-size: 12px;
+    line-height: .5;
+}
+.user-profile .logo-name .username > .name {
+    font-size: 16px;
+    font-weight: bold;
+}
+.user-profile .u-t {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10vh;
+    font-size: 13px;
+    line-height: .5;
+    padding: 25px 30px;
+    border-right: 1px solid silver;
+}
+.user-profile .u-t .star-icon {
+    display: flex;
+    gap: 5px;
+    color: gold;
+}
+.user-profile .balance p {
+    font-size: 16px;
+    font-weight: bold;
+}
+.user-profile .balance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10vh;
+    font-size: 13px;
+    line-height: .5;
+    padding: 25px 30px;
+    align-items: flex-start;
+}
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+.menu a {
+    color: rgb(12, 72, 122);
+}
+.menu .active {
+    text-align: center;
+    width: 10%;
+    color: rgb(20, 205, 199);
+    border-bottom: 2px solid rgb(20, 205, 199);
+}
+.menu-open {
+    display: none;
+}
+.details-body {
+    width: 90%;
+    height: 61.7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7px;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.details-body .user-details-id {
+    width: 100%;
+    height: 16vh;
+    border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+.details-body .user-details-id .user-id {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 5px;
+}
+.details-body .user-details-id .user-id .grey {
+    color: silver;
+}
+
+@media screen and (max-width: 1511px) {
+    .menu a {
+        color: rgb(12, 72, 122);
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 1328px) {
+    .menu a {
+        color: rgb(12, 72, 122);
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 1115px) {
+    .menu a {
+        color: rgb(12, 72, 122);
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 941px) {
+    .user-profile .logo-name {
+        gap: 2rem;
+        padding: 5px 30px;
+    }
+    .user-profile .logo-name .user-icon {
+        font-size: 40px;
+        height: 8vh;
+        padding: 8px 20px;
+        border-radius: 50%;
+    }
+    .user-profile .logo-name .username {
+        font-size: 10px;
+        line-height: .5;
+    }
+    .user-profile .logo-name .username > .name {
+        font-size: 14px;
+    }
+    .user-profile .u-t {
+        height: 10vh;
+        font-size: 12px;
+        line-height: .5;
+        padding: 25px 30px;
+    }
+    .user-profile .balance p {
+        font-size: 14px;
+    }
+    .user-profile .balance {
+        height: 10vh;
+        font-size: 10px;
+        line-height: 0;
+        padding: 25px 30px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .carddd {
+        margin-top: -100px;
+    }
+    .main-cards .back-link .backlist .b-u {
+        font-size: 10px;
+        padding: 5px 15px;
+        border-radius: 7px;
+    }
+    
+    .main-cards .back-link .backlist .a-u {
+        font-size: 10px;
+        padding: 5px 15px;
+        border-radius: 7px;
+    }
+}
+@media screen and (max-width: 639px) {
+    .user-profile .logo-name {
+        gap: 1rem;
+        padding: 5px 30px;
+    }
+    .user-profile .logo-name .user-icon {
+        font-size: 40px;
+        height: 8vh;
+        padding: 7px 15px;
+        border-radius: 50%;
+    }
+    .user-profile .logo-name .username > .name {
+        font-size: 12px;
+    }
+    .user-profile .u-t {
+        height: 9.7vh;
+        font-size: 11px;
+        line-height: 0;
+        padding: 25px 25px;
+    }
+    .user-profile .balance p {
+        font-size: 12px;
+    }
+    .user-profile .balance {
+        height: 12vh;
+        font-size: 10px;
+        line-height: 0;
+        padding: 25px 30px;
+    }
+}
+@media screen and (max-width: 730px) {
+    .details-body .user-details-id .grey {
+        font-size: 10px;
+    }
+    .details-body .user-details-id p {
+        font-size: 10px;
+    }
+    .details-body .user-details-id p b {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .carddd {
+        margin-top: -15.6rem;
+    }
+    .main-cards-datails {
+        height: 50vh;
+    }
+}
+@media screen and (max-width: 580px) {
+    .user-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    .user-profile .logo-name {
+        gap: 1rem;
+        padding: 0 15px;
+    }
+    .user-profile .logo-name .user-icon {
+        font-size: 40px;
+        height: 8vh;
+        padding: 7px 15px;
+        border-radius: 50%;
+    }
+    .user-profile .logo-name .username > .name {
+        font-size: 12px;
+    }
+    .user-profile .logo-name .username p {
+        font-size: 14px;
+    }
+    .user-profile .u-t {
+        height: 9.7vh;
+        font-size: 11px;
+        line-height: 0;
+        padding: 20px 20px;
+    }
+    .user-profile .balance {
+        line-height: 0;
+        padding: 20px 25px;
+    }
+    .user-profile .balance .bank {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 503px) {
+    .user-profile {
+        margin-top: .5rem;
+    }
+    .user-profile .logo-name {
+        display: flex;
+        align-items: center;
+        padding: 5px 30px;
+        border-right: none;
+        border-bottom: 1px solid silver;
+    }
+    .user-profile .u-t {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 10vh;
+        font-size: 13px;
+        line-height: .5;
+        padding: 25px 30px;
+        border-right: none;
+        border-bottom: 1px solid silver;
+    }
+    .carddd {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: none;
+        height: 30vh;
+    }
+    .br-spacing {
+        display: block;
+    }
+    .user-profile {
+        width: 100%;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* z-index: 100 */
+        /* padding-top: 10px; */
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+    .user-profile .logo-name {
+        flex-direction: column;
+    }
+    .menu {
+        display: none;
+    }
+    .menu-open {
+        display: block;
+    }
+    .back-link .back h4 {
+        font-size: 14px;
+    }
+    .user-profile .logo-name .user-icon {
+        font-size: 45px;
+        height: 9vh;
+        padding: 7px 20px;
+        border-radius: 50%;
+    }
+    .user-profile .logo-name .username > .name {
+        font-size: 16px;
+    }
+    .user-profile .u-t {
+        width: 41%;
+        height: 7.5vh;
+        font-size: 16px;
+        line-height: 0;
+        padding: 20px 20px;
+    }
+    .user-profile .balance p {
+        font-size: 16px;
+    }
+    .user-profile .balance {
+        line-height: 0;
+        padding: 20px 25px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .user-profile .u-t {
+        font-size: 10px;
+    }
+    .user-profile .logo-name .username p {
+        font-size: 10px;
+    }
+    .user-profile .balance .bank {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 404px) {
+    .main-cards .back-link .backlist .b-u {
+        padding: 5px;
+        border-radius: 7px;
+    }
+    
+    .main-cards .back-link .backlist .a-u {
+        padding: 5px;
+        border-radius: 7px;
+    }
+}
+@media screen and (max-width: 368px) {
+    .details-body .user-details-id p {
+        font-size: 8px;
+    }
+}
+@media screen and (max-width: 344px) {
+    .details-body .user-details-id .grey {
+        font-size: 5.5px;
+    }
+}
+@media screen and (max-width: 338px) {
+    .main-cards .back-link .back {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .main-cards .back-link .backlist .b-u {
+        padding: 5px 10px;
+        font-size: 7px;
+    }
+    
+    .main-cards .back-link .backlist .a-u {
+        padding: 5px 10px;
+        font-size: 7px;
+    }
+}

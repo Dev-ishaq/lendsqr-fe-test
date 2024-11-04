@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 1s;
+    font-family: sans-serif;
+}
+
+:root {
+    --main: rgb(20, 205, 199);
+    --main2: rgb(10, 156, 151);
+    --fonts: 16px;
+    --color: #fff;
+    --silver: rgb(224, 224, 224);
+    --silver2: rgba(250, 250, 250, 0.615);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header start */
+header {
+    background-color: var(--color);
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 7vh;
+    box-shadow: 0 .5rem 4rem rgba(163, 163, 163, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .main-header {
+    width: 99%;
+}
+.brand-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search {
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+.search span i {
+    color: var(--color);
+}
+.search span {
+    background-color: var(--main);
+    padding: 6px 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; 
+    cursor: pointer;  
+}
+.search input {
+    width: 75%;
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    outline: none;
+    border: .5px solid var(--silver);
+}
+.search input::placeholder {
+    font-size: 12px;
+}
+
+.profile .main-profile .docs p {
+    margin-top: 14px;
+    border-bottom: 1px solid #000000d0;
+    font-size: 12px;
+}
+.profile .main-profile .docs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.profile .main-profile .img-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.profile .main-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+.profile .main-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+main {
+    width: 100%;
+    background-color: var(--silver2);
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Login start */
+.log-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+
+.img-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.login-form {
+    background-color: var(--color);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.img {
+    background-color: var(--silver2);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.brand {
+    position: fixed;
+    top: 5rem;
+    left: 5rem;
+}
+
+.login-form form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid var(--silver);
+    position: relative;
+    padding-right: 50px;
+}
+
+.form-group {
+    position: relative;
+    width: 70%;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--main);
+    font-size: 0.9em;
+    font-weight: bold;
+    user-select: none;
+}
+
+.login-form form button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: var(--color);
+    background-color: var(--main);
+    transition: all 1s;
+}
+
+.link {
+    color: var(--main);
+}
+
+.login-form form button:hover {
+    background-color: var(--main2);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .login-form, .img {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .brand {
+        top: 2rem;
+        left: 2rem;
+        font-size: 1.2rem;
+    }
+
+    .form-group {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 889px) {
+    .img-login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .login-form {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+    .log-form, .img {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .form-group {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .log-form {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .login-form, .img {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .brand {
+        top: 1.5rem;
+        left: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .log-form {
+        height: auto;
+        padding: 10px;
+    }
+
+    .login-form, .img {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .login-form form input {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    .login-form form button {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    .toggle-password {
+        font-size: 0.8em;
+        right: 8px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .login-form form input {
+        padding: 6px;
+        font-size: 0.8em;
+    }
+
+    .login-form form button {
+        padding: 6px;
+        font-size: 0.8em;
+    }
+
+    .brand {
+        font-size: 0.8rem;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}
+
+/* Login end */
+
+
+@media screen and (max-width: 750px) {
+    .search {
+        display: none;
+    }
+    main {
+        width: 100%;
+        background-color: var(--silver2);
+        display: flex;
+        flex-direction: column;
+        gap: 20rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .profile .main-profile .docs {
+        gap: 15px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .profile .main-profile {
+        gap: 15px;
+    }
+    .search {
+        display: none;
+    }
+    main {
+        width: 100%;
+        background-color: var(--silver2);
+        display: flex;
+        flex-direction: column;
+        gap: 5.5rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .search {
+        display: none;
+    }
+    main {
+        width: 100%;
+        background-color: var(--silver2);
+        display: flex;
+        flex-direction: column;
+        gap: 20rem;
+    }
+}

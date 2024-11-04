@@ -1,0 +1,125 @@
+.nav-body {
+  display: flex;
+}
+
+.sidebar {
+  background-color: #fff;
+  width: 17%;
+  height: 100vh;
+  padding: 5px;
+  box-shadow: 0 0.5rem 4rem rgba(163, 163, 163, 0.1);
+  transition: 1s;
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar ul a {
+  padding: 3px;
+  font-size: 14px;
+  color: rgb(12, 72, 122);
+}
+.sidebar ul a:hover {
+  width: 100%;
+  border-left: 3px solid rgb(20, 205, 199);
+  background-color: rgba(20, 205, 199, 0.141);
+  transition: .1s;
+}
+
+.sidebar ul .name {
+  font-size: 12px;
+  font-weight: bold;
+  color: grey;
+}
+
+.nav-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-head .times {
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+.active-nav {
+  width: 100%;
+  border-left: 3px solid rgb(20, 205, 199);
+  background-color: rgba(20, 205, 199, 0.079);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1290px) {
+  .sidebar ul a {
+    font-size: 12px;
+  }
+  .nav-body nav ul .nav-head .fa-kit {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 1010px) {
+  .sidebar {
+    background-color: #fff;
+    width: 25%;
+    padding: 7px;
+  }
+}
+@media screen and (max-width: 1290px) {
+  .sidebar {
+      width: 25%;
+  }
+}
+@media screen and (max-width: 1290px) {
+  .sidebar {
+      width: 27%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .sidebar {
+    width: 82%;
+    height: 100vh;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .nav-head .times {
+    background-color: rgba(20, 205, 199, 0.192);
+    display: block;
+    color: #fff;
+    font-size: 25px;
+    padding: 0 5px 0 5px;
+    border-radius: 20px;
+  }
+  
+}
+
+@media screen and (min-width: 901px) {
+  .toggle-btn {
+    display: none;
+    border: none;
+  }
+}
+
+@media screen and (min-width: 1296px) {
+  .sidebar ul a {
+    padding: 2px;
+    font-size: 13px;
+  }
+  .sidebar {
+    background-color: #fff;
+    width: 20%;
+    padding: 5px;
+  }
+}
