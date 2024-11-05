@@ -57,9 +57,9 @@ const DropDown = () => {
             height: '15vh',
             zIndex: 1,
           }}
-        >
+        >  
           <ul style={{ padding: '10px', margin: 0 }}>
-            <Link style={{ padding: '8px 12px', cursor: 'pointer', color: 'darkblue', fontSize: '13px' }} onClick={toggleDropdown}>
+            <Link to={'/user'} style={{ padding: '8px 12px', cursor: 'pointer', color: 'darkblue', fontSize: '13px' }} onClick={toggleDropdown}>
               <i className="fa-regular fa-eye"></i> View Details
             </Link><br /><br />
             <Link style={{ padding: '8px 12px', cursor: 'pointer', color: 'darkblue', fontSize: '13px' }} onClick={toggleDropdown}>

@@ -67,7 +67,7 @@ const MenuDropDown = () => {
            height: '15vh',
            zIndex: 1,
          }}
-       >
+       >  
          <ul style={{ padding: '10px', margin: 0, height: '15vh', width: '100%' }}>
            <Link style={{ padding: '10px', cursor: 'pointer', color: 'rgb(12, 72, 122)', fontSize: '14px' }} onClick={toggleDropdown}>
               Bank Details
