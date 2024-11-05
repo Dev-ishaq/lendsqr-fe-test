@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginContent = () => {
     const [btn, setBtn] = useState('LOG IN');
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        navigate('/dash');
     };
 
     const togglePasswordVisibility = () => {
@@ -44,7 +47,7 @@ const LoginContent = () => {
                 <a href="" className='link'>Forget Password?</a>
                 <br /><br />
                 <div className="form-group">
-                    <button onClick={() => setBtn('Loading...')}>{btn}</button>
+                    <button>{btn}</button>
                 </div>
             </form>
            </div>
