@@ -19,7 +19,7 @@ const UserTable = () => {
   // }, []);
   useEffect(() => {
     // Fetch the data from JSON in the public folder
-    fetch('http://localhost:8000/db.json') // Adjusted path
+    fetch('/db.json') // Adjusted path
       .then((res) => {
         if (!res.ok) {
           throw new Error('Network response was not ok');
@@ -29,6 +29,7 @@ const UserTable = () => {
       .then((data) => setUsers(data))
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
+  
   
 
   // Get current users for the current page
