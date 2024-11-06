@@ -133,7 +133,7 @@
       font-size: 11px;
     }
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 600px) {
       .user-table {
           margin-top: 1.5rem;
       }
