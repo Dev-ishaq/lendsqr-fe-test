@@ -12,7 +12,6 @@ const UserTable = () => {
 
   // Fetch data from the JSON file
   useEffect(() => {
-    console.log("Fetching data from /db.json...");
     fetch('/db.json')
       .then((res) => {
         console.log("Response received:", res);
@@ -23,7 +22,7 @@ const UserTable = () => {
       })
       .then((data) => {
         if (data.users) {
-          console.log("Data fetched successfully:", data.users);
+         // console.log("Data fetched successfully:", data.users);
           setUsers(data.users);
         } else {
           console.error('Expected data structure not found');
