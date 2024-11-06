@@ -72,6 +72,6 @@
 @media screen and (max-width: 600px) {
     .all-cards {
         grid-template-columns: 1fr;
-        margin-top: 25rem;
+        margin-top: 27rem;
     }
 }
