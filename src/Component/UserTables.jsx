@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-// import { Link } from 'react-router-dom';
 import '../assets/css/UserTables.css';
 import '../assets/css/Ut.css';
 import DropDown from './DropDown';
@@ -11,27 +10,9 @@ const UserTable = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const tableRef = useRef(null);
 
-  // useEffect(() => {
-  //   fetch(`https://localhost:8000/users`)//api
-  //     .then((res) => res.json())
-  //     .then((data) => setUsers(data))
-  //     .catch((error) => console.error('Error fetching data:', error));
-  // }, []);
-  // useEffect(() => {
-  //   // Fetch the data from JSON in the public folder
-  //   fetch('/db.json/users') // Adjusted path
-  //     .then((res) => {
-  //       if (!res.ok) {
-  //         throw new Error('Network response was not ok');
-  //       }
-  //       return res.json();
-  //     })
-  //     .then((data) => setUsers(data))
-  //     .catch((error) => console.error('Error fetching data:', error));
-  // }, []);
-  
+  // Fetch data from the JSON file
   useEffect(() => {
-    console.log("Fetching data from db.json...");
+    console.log("Fetching data from /db.json...");
     fetch('/db.json')
       .then((res) => {
         console.log("Response received:", res);
@@ -41,14 +22,17 @@ const UserTable = () => {
         return res.json();
       })
       .then((data) => {
-        console.log("Data fetched successfully:", data);
-        setUsers(data);
+        if (data.users) {
+          console.log("Data fetched successfully:", data.users);
+          setUsers(data.users);
+        } else {
+          console.error('Expected data structure not found');
+        }
       })
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
-  
 
-  // Get current users for the current page
+  // Calculate current users for the current page
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
@@ -60,25 +44,18 @@ const UserTable = () => {
     setCurrentPage(page);
   };
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <div className="table-container">
-      
-
       {/* Modal */}
       {isModalOpen && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="mmm">
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <form>
-              <label>Organization:</label>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <form>
+                <label>Organization:</label>
                 <select>
                   <option value="">Select</option>
                 </select>
@@ -87,23 +64,23 @@ const UserTable = () => {
                 <label>Email:</label>
                 <input type="email" required />
                 <label>Date:</label>
-                <input type="date" required/>
+                <input type="date" required />
                 <label>Phone Number:</label>
                 <input type="tel" required />
                 <label>Status:</label>
                 <select>
                   <option value="">Select</option>
                   <option value="Active">Active</option>
-                  <option value="Inactive">Pending</option>
+                  <option value="Inactive">Inactive</option>
                 </select>
-              <div className="btn-flex">
-                <button onClick={closeModal} className="btn-submit" style={{backgroundColor: 'transparent', border: '1px solid silver', color: 'rgb(12, 72, 122)'}}>
-                  Reset
-                </button>
-                <button type="submit" className="btn-submit">Submit</button>
-              </div>
-            </form>
-          </div>
+                <div className="btn-flex">
+                  <button onClick={closeModal} className="btn-submit" style={{ backgroundColor: 'transparent', border: '1px solid silver', color: 'rgb(12, 72, 122)' }}>
+                    Reset
+                  </button>
+                  <button type="submit" className="btn-submit">Submit</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       )}
@@ -113,12 +90,12 @@ const UserTable = () => {
           <tr>
             <th>
               <span
-              className="fa fa-plus fa-fade fa-beat"
-              style={{ float: 'left', width: '10%', cursor: 'pointer', fontSize: '20px'}}
-              onClick={openModal}
-            >
-              
-            </span>&nbsp; Organization</th>
+                className="fa fa-plus fa-fade fa-beat"
+                style={{ float: 'left', width: '10%', cursor: 'pointer', fontSize: '20px' }}
+                onClick={openModal}
+              ></span>
+              &nbsp; Organization
+            </th>
             <th>Username</th>
             <th>Email</th>
             <th>Phone Number</th>
@@ -128,7 +105,7 @@ const UserTable = () => {
         </thead>
         <tbody>
           {currentUsers.map((user, index) => (
-            <tr key={index}>
+            <tr key={user.id || index}>
               <td>{user.organization}</td>
               <td>{user.username}</td>
               <td>{user.email}</td>
@@ -136,14 +113,13 @@ const UserTable = () => {
               <td>{user.dateJoined}</td>
               <td style={{ display: 'flex', justifyContent: 'space-between', position: 'relative' }}>
                 <span className={`status ${user.status.toLowerCase()}`}>{user.status}</span>
-               <DropDown />
+                <DropDown />
               </td>
             </tr>
           ))}
         </tbody>
       </table>
 
-      {/* Pagination Controls */}
       <div className="user-table-pagination">
         <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
           &larr;
