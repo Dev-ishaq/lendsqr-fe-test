@@ -19,7 +19,7 @@ const UserTable = () => {
   // }, []);
   useEffect(() => {
     // Fetch the data from JSON in the public folder
-    fetch('http://localhost:8000/users') // Adjusted path
+    fetch('http://localhost:8000/db.json') // Adjusted path
       .then((res) => {
         if (!res.ok) {
           throw new Error('Network response was not ok');
