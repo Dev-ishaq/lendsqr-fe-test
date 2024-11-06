@@ -13,7 +13,7 @@ const UserTable = () => {
 
   useEffect(() => {
     // Fetch the data from JSON
-    fetch(`http://localhost:8000/users`)//api
+    fetch(`https://localhost:8000/users`)//api
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((error) => console.error('Error fetching data:', error));
