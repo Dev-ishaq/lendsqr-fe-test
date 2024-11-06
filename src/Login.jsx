@@ -17,9 +17,7 @@ const Login = () => {
                 </div>
             </div>
             <div className="login-form">
-                {/* <div className="main-login"> */}
                 <LoginContent />
-                {/* </div> */}
             </div>
         </div>
     </div>
