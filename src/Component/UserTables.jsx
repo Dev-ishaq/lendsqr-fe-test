@@ -17,19 +17,35 @@ const UserTable = () => {
   //     .then((data) => setUsers(data))
   //     .catch((error) => console.error('Error fetching data:', error));
   // }, []);
+  // useEffect(() => {
+  //   // Fetch the data from JSON in the public folder
+  //   fetch('/db.json/users') // Adjusted path
+  //     .then((res) => {
+  //       if (!res.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       return res.json();
+  //     })
+  //     .then((data) => setUsers(data))
+  //     .catch((error) => console.error('Error fetching data:', error));
+  // }, []);
+  
   useEffect(() => {
-    // Fetch the data from JSON in the public folder
-    fetch('/db.json/users') // Adjusted path
+    console.log("Fetching data from db.json...");
+    fetch('/db.json')
       .then((res) => {
+        console.log("Response received:", res);
         if (!res.ok) {
           throw new Error('Network response was not ok');
         }
         return res.json();
       })
-      .then((data) => setUsers(data))
+      .then((data) => {
+        console.log("Data fetched successfully:", data);
+        setUsers(data);
+      })
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
-  
   
 
   // Get current users for the current page
