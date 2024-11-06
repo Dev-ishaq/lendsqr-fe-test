@@ -11,13 +11,25 @@ const UserTable = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const tableRef = useRef(null);
 
+  // useEffect(() => {
+  //   fetch(`https://localhost:8000/users`)//api
+  //     .then((res) => res.json())
+  //     .then((data) => setUsers(data))
+  //     .catch((error) => console.error('Error fetching data:', error));
+  // }, []);
   useEffect(() => {
-    // Fetch the data from JSON
-    fetch(`https://localhost:8000/users`)//api
-      .then((res) => res.json())
+    // Fetch the data from JSON in the public folder
+    fetch('http://localhost:8000/users') // Adjusted path
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
       .then((data) => setUsers(data))
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
+  
 
   // Get current users for the current page
   const indexOfLastUser = currentPage * usersPerPage;
